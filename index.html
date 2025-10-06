@@ -8,36 +8,35 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --vino:#5a1b2c;
-      --vino-osc:#3a111d;
-      --dorado:#d4b25f;
-      --dorado-claro:#f1e0b0;
+      --negro-elegante:#111111;
+      --vino:#631c2c;
+      --dorado:#d4af37;
+      --dorado-suave:#e8d9a3;
       --blanco:#ffffff;
-      --crema:#fffaf4;
-      --gris-claro:#f8f8f8;
-      --texto:#2d2d2d;
+      --gris-suave:#f8f8f8;
 
-      --grad-vino:linear-gradient(135deg,var(--vino),var(--vino-osc));
-      --grad-dorado:linear-gradient(135deg,var(--dorado),var(--dorado-claro));
-      --shadow:0 8px 28px rgba(0,0,0,.18);
+      --grad-dorado:linear-gradient(135deg,var(--dorado),var(--dorado-suave));
+      --grad-vino:linear-gradient(135deg,var(--vino),#4a1220);
+
+      --shadow:0 8px 28px rgba(0,0,0,0.22);
     }
 
     *{margin:0;padding:0;box-sizing:border-box;}
     body{
-      font-family:Inter, sans-serif;
-      background:var(--gris-claro);
-      color:var(--texto);
-      line-height:1.6;
+      font-family:Montserrat, sans-serif;
+      background:var(--negro-elegante);
+      color:#ddd;
+      line-height:1.7;
       -webkit-font-smoothing:antialiased;
     }
 
     h1,h2,h3,h4{
       font-family:'Cinzel', serif;
-      letter-spacing:0.5px;
+      letter-spacing:0.4px;
     }
 
     .container{
@@ -50,153 +49,180 @@
     header{
       background:var(--grad-vino);
       color:#fff;
-      border-radius:24px;
-      padding:28px 20px;
+      border-radius:30px;
+      padding:32px 20px;
       text-align:center;
       box-shadow:var(--shadow);
       overflow:hidden;
       position:relative;
+      margin-bottom:30px;
     }
-    header::after{
+    header::before{
       content:"";
       position:absolute;
       inset:0;
-      background:radial-gradient(circle at top right, rgba(255,255,255,0.08), transparent 70%);
+      background:radial-gradient(circle at 70% 30%,rgba(255,255,255,0.08),transparent 60%);
     }
     header h1{
-      font-size:clamp(1.8rem,5vw,2.8rem);
+      font-size:clamp(2rem,5vw,3rem);
       font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:2px;
     }
     header p{
-      font-size:clamp(0.95rem,2.5vw,1.1rem);
-      opacity:0.95;
-      margin-top:8px;
-      font-weight:300;
+      font-size:clamp(1rem,2.5vw,1.2rem);
+      opacity:0.9;
+      margin-top:10px;
     }
 
     /* PORTADA */
     .hero{
-      margin:28px 0;
-      border-radius:24px;
+      border-radius:30px;
       overflow:hidden;
       box-shadow:var(--shadow);
+      margin-bottom:36px;
     }
     .hero img{
       width:100%;
-      height:auto;
       display:block;
+      height:auto;
+      max-height:540px;
       object-fit:cover;
-      max-height:500px;
+      filter:brightness(0.9);
     }
 
-    /* INVITACIÓN */
+    /* TARJETA INVITACIÓN */
     .inv-card{
-      background:var(--blanco);
-      border-radius:26px;
-      padding:36px 24px;
+      background:linear-gradient(135deg,#1a1a1a,#181818);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:32px;
+      padding:48px 26px;
       box-shadow:var(--shadow);
       text-align:center;
-      margin-bottom:36px;
+      position:relative;
+      overflow:hidden;
+      margin-bottom:40px;
     }
+    .inv-card::before{
+      content:"";
+      position:absolute;
+      top:-50%;
+      left:-50%;
+      width:200%;
+      height:200%;
+      background:radial-gradient(circle at center, rgba(212,175,55,0.07), transparent 50%);
+      z-index:0;
+    }
+    .inv-content{position:relative;z-index:2;}
     .inv-card h2{
-      font-size:clamp(1.8rem,4vw,2.5rem);
-      color:var(--vino);
-      margin-bottom:16px;
+      font-size:clamp(1.8rem,4vw,2.6rem);
+      color:var(--dorado);
+      margin-bottom:18px;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:1.2px;
     }
     .inv-card p{
-      max-width:720px;
+      max-width:750px;
       margin:auto;
-      font-size:1.05rem;
-      margin-bottom:18px;
-      line-height:1.8;
+      font-size:1.1rem;
+      color:#eee;
+      margin-bottom:24px;
     }
 
-    /* INFO GRID */
+    /* GRID DE INFORMACIÓN */
     .info-grid{
       display:grid;
-      gap:22px;
-      margin-top:26px;
+      gap:28px;
+      margin-top:28px;
     }
     @media(min-width:768px){
-      .info-grid{
-        grid-template-columns:repeat(3,1fr);
-      }
+      .info-grid{grid-template-columns:repeat(3,1fr);}
     }
     .info{
-      background:var(--crema);
-      border-radius:18px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:20px;
       padding:20px 16px;
-      box-shadow:0 4px 14px rgba(0,0,0,0.08);
-      border:1px solid rgba(0,0,0,0.05);
+      box-shadow:0 2px 12px rgba(0,0,0,0.2);
     }
     .info h3{
-      color:var(--vino);
+      color:var(--dorado);
       font-size:1.1rem;
-      margin-bottom:8px;
+      margin-bottom:10px;
       font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:1px;
     }
     .info p{
       font-size:1rem;
+      color:#ddd;
       line-height:1.5;
     }
 
     /* BOTÓN WHATSAPP */
     .btn-confirmar{
       display:inline-block;
-      margin-top:28px;
-      padding:16px 36px;
+      margin-top:36px;
+      padding:16px 40px;
       font-size:1.05rem;
       font-weight:600;
-      color:#fff;
-      background:var(--vino);
-      border-radius:16px;
+      color:#111;
+      background:var(--grad-dorado);
+      border-radius:20px;
       text-decoration:none;
       transition:all .3s ease;
-      box-shadow:0 4px 18px rgba(0,0,0,0.25);
+      box-shadow:0 6px 18px rgba(0,0,0,0.3);
+      text-transform:uppercase;
+      letter-spacing:1px;
     }
     .btn-confirmar:hover{
-      background:var(--vino-osc);
+      filter:brightness(1.05);
       transform:translateY(-2px);
     }
 
     /* MAPA COMO BOTÓN */
     .mapa{
-      margin-top:36px;
-      border-radius:24px;
+      background:linear-gradient(135deg,#1b1b1b,#141414);
+      border-radius:30px;
       overflow:hidden;
+      padding:28px 22px;
       box-shadow:var(--shadow);
-      background:var(--blanco);
-      padding:18px;
       text-align:center;
+      margin-top:50px;
     }
     .mapa h3{
-      font-size:1.5rem;
-      color:var(--vino);
+      font-size:1.6rem;
+      color:var(--dorado);
       margin-bottom:12px;
       font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:1px;
     }
     .mapa p{
-      font-size:1.05rem;
+      font-size:1rem;
       font-weight:500;
+      color:#ddd;
       margin-bottom:18px;
-      color:#333;
     }
     .aviso-mapa{
-      background:var(--grad-dorado);
-      color:#3a2a12;
-      padding:10px 14px;
-      border-radius:14px;
-      font-weight:700;
       display:inline-block;
-      margin-bottom:14px;
-      box-shadow:0 3px 10px rgba(0,0,0,0.15);
+      background:var(--grad-dorado);
+      color:#222;
+      font-weight:700;
+      padding:10px 18px;
+      border-radius:14px;
       font-size:1rem;
+      margin-bottom:16px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.3);
+      text-transform:uppercase;
+      letter-spacing:.8px;
     }
     .mapa a.mapa-link{
       display:block;
-      border-radius:22px;
+      border-radius:24px;
       overflow:hidden;
-      box-shadow:0 4px 16px rgba(0,0,0,0.2);
+      box-shadow:0 4px 20px rgba(0,0,0,0.4);
       transition:transform .3s ease;
       margin-bottom:14px;
     }
@@ -206,29 +232,30 @@
     .mapa img{
       width:100%;
       display:block;
+      border-radius:24px;
       height:auto;
-      border-radius:22px;
     }
 
     /* NOTA FINAL */
     .nota{
       background:var(--grad-dorado);
-      color:#3d2f14;
+      color:#222;
       text-align:center;
       padding:26px 18px;
-      border-radius:24px;
-      margin:36px 0;
-      font-size:1.1rem;
+      border-radius:28px;
+      margin:50px 0 20px;
+      font-size:1.15rem;
       font-weight:600;
       box-shadow:var(--shadow);
+      text-transform:uppercase;
+      letter-spacing:.8px;
     }
 
     footer{
       text-align:center;
       font-size:.85rem;
-      color:#555;
-      padding:14px 0;
-      margin-top:14px;
+      color:#aaa;
+      padding:16px 0;
     }
   </style>
 </head>
@@ -238,7 +265,7 @@
     <!-- ENCABEZADO -->
     <header>
       <h1>XV Años de Carolina</h1>
-      <p>Cena de celebración en La Madalena · Plaza Landmark</p>
+      <p>Cena de gala en La Madalena · Plaza Landmark</p>
     </header>
 
     <!-- PORTADA -->
@@ -248,37 +275,38 @@
 
     <!-- INVITACIÓN -->
     <section class="inv-card">
-      <h2>¡Estás invitado a una noche especial!</h2>
-      <p>Con mucho cariño los invitamos a la <strong>cena para celebrar los XV años de Carolina</strong>.
-         Acompáñanos a compartir una velada llena de alegría y momentos inolvidables.</p>
+      <div class="inv-content">
+        <h2>Invitación Especial</h2>
+        <p>Con enorme alegría te invitamos a la <strong>cena de gala para celebrar los XV años de Carolina</strong>.  
+           Será una velada única para compartir momentos inolvidables en un ambiente elegante.</p>
 
-      <div class="info-grid">
-        <div class="info">
-          <h3>📅 Fecha</h3>
-          <p>Miércoles <strong>15 de octubre</strong><br>Hora: <strong>7:00 p.m.</strong></p>
+        <div class="info-grid">
+          <div class="info">
+            <h3>📅 Fecha</h3>
+            <p>Miércoles <strong>15 de octubre</strong><br>Hora: <strong>7:00 p.m.</strong></p>
+          </div>
+          <div class="info">
+            <h3>📍 Lugar</h3>
+            <p>Restaurante <strong>La Madalena</strong><br>Plaza Landmark, Guadalajara</p>
+          </div>
+          <div class="info">
+            <h3>🪑 Reservación</h3>
+            <p>Por favor confirma tu asistencia para apartar las mesas</p>
+          </div>
         </div>
-        <div class="info">
-          <h3>📍 Lugar</h3>
-          <p>Restaurante <strong>La Madalena</strong><br>
-             Plaza Landmark, Guadalajara</p>
-        </div>
-        <div class="info">
-          <h3>🪑 Reservación</h3>
-          <p>Por favor confirma tu asistencia para apartar las mesas</p>
-        </div>
+
+        <a class="btn-confirmar" href="https://wa.link/0l82nt" target="_blank" rel="noopener">
+          Confirmar asistencia por WhatsApp
+        </a>
       </div>
-
-      <a class="btn-confirmar" href="https://wa.link/0l82nt" target="_blank" rel="noopener">
-        Confirmar asistencia por WhatsApp
-      </a>
     </section>
 
     <!-- MAPA COMO BOTÓN -->
     <section class="mapa">
-      <h3>Cómo llegar a La Madalena</h3>
+      <h3>Cómo llegar</h3>
       <p>📍 Av. Patria 2085, Puerta de Hierro, 45116 Zapopan, Jalisco, México</p>
 
-      <div class="aviso-mapa">🗺️ Toca el mapa para abrir la dirección en Google Maps</div>
+      <div class="aviso-mapa">🗺️ TOCA EL MAPA PARA ABRIR LA DIRECCIÓN EN GOOGLE MAPS</div>
 
       <a class="mapa-link" href="https://maps.app.goo.gl/hE1tJjKcH9RiYhXE6" target="_blank" rel="noopener">
         <img src="maps.png" alt="Mapa de La Madalena - Toca para abrir en Google Maps">
@@ -286,11 +314,11 @@
     </section>
 
     <div class="nota">
-      ¡Será un honor contar con tu presencia para celebrar juntos este momento tan especial! ✨
+      Será un honor contar con tu presencia en esta noche tan especial ✨
     </div>
 
     <footer>
-      © 2025 Celebración XV Años de Carolina · Cena en La Madalena – Plaza Landmark
+      © 2025 Celebración XV Años de Carolina · Cena de gala en La Madalena – Plaza Landmark
     </footer>
 
   </div>
