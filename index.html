@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Invitación XV Años – Carolina | La Madalena</title>
+  <title>XV Años de Carolina | La Madalena</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Preload imágenes -->
   <link rel="preload" href="caroxv.jpg" as="image" fetchpriority="high">
@@ -16,20 +16,19 @@
 
   <style>
     :root{
-      --dorado:#c9a44a;
-      --dorado-suave:#e4d2a0;
-      --vino:#6d2332;
-      --vino-osc:#4a1621;
+      --vino:#5f1d2b;
+      --vino-osc:#3e131d;
+      --dorado:#caa94c;
+      --dorado-claro:#e9d9a7;
       --crema:#fffaf4;
-
       --blanco:#ffffff;
-      --gris-claro:#f7f7f7;
-      --gris:#d8d8d8;
+      --gris-claro:#f9f9f9;
+      --gris:#dddddd;
       --texto:#2a2a2a;
 
-      --shadow: rgba(0,0,0,.12);
-      --grad-encabezado:linear-gradient(135deg,var(--vino),var(--vino-osc));
-      --grad-dorado:linear-gradient(135deg,var(--dorado),var(--dorado-suave));
+      --grad-vino:linear-gradient(135deg,var(--vino),var(--vino-osc));
+      --grad-dorado:linear-gradient(135deg,var(--dorado),var(--dorado-claro));
+      --shadow:0 6px 25px rgba(0,0,0,.15);
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -37,138 +36,172 @@
       font-family:Inter, sans-serif;
       background:var(--gris-claro);
       color:var(--texto);
-      -webkit-font-smoothing:antialiased;
       line-height:1.6;
+      -webkit-font-smoothing:antialiased;
     }
 
     h1,h2,h3{
-      font-family:'Playfair Display',serif;
+      font-family:'Playfair Display', serif;
       letter-spacing:.3px;
     }
 
-    .container{max-width:1200px;margin:0 auto;padding:16px}
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:18px;
+    }
 
     /* Encabezado */
     header{
-      display:flex;align-items:center;justify-content:center;
-      background:var(--grad-encabezado);
-      padding:18px;border-radius:18px;
+      background:var(--grad-vino);
       color:#fff;
-      box-shadow:0 6px 24px var(--shadow);
-      margin-bottom:28px; position:relative;
+      border-radius:20px;
+      padding:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:var(--shadow);
+      margin-bottom:28px;
+      position:relative;
+      overflow:hidden;
+    }
+    header::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at top right, rgba(255,255,255,0.12), transparent 70%);
     }
     .logo-box{
-      width:110px;height:110px;background:var(--blanco);
-      border-radius:18px;padding:10px;border:2px solid var(--blanco);
-      box-shadow:0 3px 16px rgba(255,255,255,.25);
-      display:flex;align-items:center;justify-content:center;margin-right:16px;
+      width:110px;height:110px;
+      background:var(--blanco);
+      border-radius:18px;
+      padding:10px;
+      display:flex;align-items:center;justify-content:center;
+      margin-right:20px;
+      box-shadow:0 4px 14px rgba(255,255,255,.25);
     }
-    .logo-box img{width:80%;height:auto;object-fit:contain}
+    .logo-box img{width:85%;height:auto;object-fit:contain}
     .title-wrap h1{
-      font-size:clamp(1.4rem,3vw,2rem);
+      font-size:clamp(1.5rem,3vw,2.3rem);
       font-weight:700;
+      margin-bottom:4px;
     }
-    .title-wrap p{font-size:.9rem;opacity:.9}
+    .title-wrap p{
+      font-size:1rem;
+      opacity:.9;
+      font-weight:400;
+    }
 
     /* Portada */
-    .hero{margin:24px 0;text-align:center}
+    .hero{
+      margin:28px 0;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
     .hero img{
-      width:100%;max-height:420px;object-fit:cover;
-      border-radius:18px;border:2px solid var(--gris);
-      box-shadow:0 6px 24px var(--shadow);
+      width:100%;
+      height:440px;
+      object-fit:cover;
+      display:block;
     }
 
     /* Tarjeta de invitación */
     .inv-card{
       background:var(--blanco);
-      border-radius:18px;border:1px solid var(--gris);
-      padding:26px 22px;
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:36px 28px;
       text-align:center;
-      box-shadow:0 8px 26px var(--shadow);
     }
     .inv-card h2{
-      font-size:2rem;
-      color:var(--vino-osc);
-      margin-bottom:10px;
+      font-size:2.4rem;
+      color:var(--vino);
+      margin-bottom:14px;
     }
-    .inv-card p.saludo{
-      font-size:1rem;
-      margin-bottom:16px;
+    .inv-card p.intro{
+      font-size:1.05rem;
+      max-width:750px;
+      margin:0 auto 22px;
+      line-height:1.7;
     }
-    .inv-card p.detalles{
-      font-size:1.1rem;
-      font-weight:500;
-      max-width:700px;
-      margin:0 auto 20px;
-      line-height:1.5;
-    }
-    .info-grid{
-      display:grid;gap:18px;margin:24px 0;
-    }
-    @media(min-width:768px){.info-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
+    /* Información */
+    .info-grid{
+      display:grid;
+      gap:22px;
+      margin:28px 0 18px;
+    }
+    @media(min-width:768px){
+      .info-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    }
     .info{
       background:var(--crema);
-      border-radius:14px;
-      padding:18px;
-      border:1px dashed var(--dorado-suave);
+      border:1px solid rgba(0,0,0,0.05);
+      border-radius:16px;
+      padding:20px 18px;
+      box-shadow:0 2px 10px rgba(0,0,0,.06);
     }
     .info h3{
-      font-size:1.1rem;
+      font-size:1.15rem;
       color:var(--vino);
       margin-bottom:6px;
+      font-weight:600;
     }
     .info p{font-size:1rem}
 
-    /* Botones */
-    .btns{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:18px}
-    .btn{
+    /* Botón de confirmación */
+    .btn-confirmar{
       display:inline-block;
-      padding:12px 20px;
-      border-radius:12px;
+      margin-top:22px;
+      padding:14px 26px;
+      font-size:1rem;
       font-weight:600;
+      color:#fff;
+      background:var(--vino);
+      border-radius:14px;
       text-decoration:none;
-      transition:.25s;
-      font-size:.95rem;
+      transition:all .25s ease;
+      box-shadow:0 4px 14px rgba(0,0,0,.2);
     }
-    .btn-primary{
-      background:var(--vino);
-      color:#fff;
-      border:none;
+    .btn-confirmar:hover{
+      background:var(--vino-osc);
+      transform:translateY(-2px);
     }
-    .btn-primary:hover{
-      filter:brightness(.93);
-      transform:translateY(-1px);
+
+    /* Mapa */
+    .mapa{
+      margin-top:32px;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:4px solid var(--blanco);
     }
-    .btn-outline{
-      background:#fff;
-      color:var(--vino);
-      border:1px solid var(--vino);
-    }
-    .btn-outline:hover{
-      background:var(--vino);
-      color:#fff;
+    .mapa iframe{
+      width:100%;
+      height:380px;
+      border:0;
     }
 
     /* Nota final */
     .nota{
       background:var(--grad-dorado);
-      color:#3c2b17;
-      padding:24px 18px;
-      border-radius:18px;
-      margin:32px 0 18px;
+      color:#3e2f14;
       text-align:center;
+      padding:26px 20px;
+      border-radius:20px;
+      margin:34px 0 20px;
       font-weight:600;
-      box-shadow:0 6px 22px var(--shadow);
+      box-shadow:var(--shadow);
+      font-size:1.1rem;
     }
 
     footer{
       text-align:center;
       font-size:.85rem;
       color:#666;
+      margin-top:16px;
       padding:14px 0;
-      margin-top:20px;
-      border-top:1px solid var(--gris);
     }
   </style>
 </head>
@@ -182,7 +215,7 @@
       </div>
       <div class="title-wrap">
         <h1>XV Años de Carolina</h1>
-        <p>Celebración en La Madalena · Plaza Landmark</p>
+        <p>Cena de celebración en La Madalena · Plaza Landmark</p>
       </div>
     </header>
 
@@ -193,36 +226,44 @@
 
     <!-- INVITACIÓN -->
     <section class="inv-card">
-      <p class="saludo">Buenos días, reciban un cordial saludo 🫡</p>
-      <h2>¡Están cordialmente invitados!</h2>
-      <p class="detalles">
-        Con mucho cariño hacemos la invitación a la <strong>cena para celebrar los XV años de Carolina</strong>.
-        Será una ocasión especial para reunirnos y compartir juntos esta fecha tan importante.
+      <h2>Estás cordialmente invitado</h2>
+      <p class="intro">
+        Nos llena de alegría invitarte a la <strong>cena para celebrar los XV años de Carolina</strong>.
+        Acompáñanos para compartir juntos esta fecha tan especial y memorable.
       </p>
 
       <div class="info-grid">
         <div class="info">
           <h3>📅 Fecha</h3>
-          <p>Miércoles <strong>15 de octubre</strong> · <strong>7:00 p.m.</strong></p>
+          <p>Miércoles <strong>15 de octubre</strong></p>
+          <p>Hora: <strong>7:00 p.m.</strong></p>
         </div>
         <div class="info">
           <h3>📍 Lugar</h3>
-          <p>Restaurante <strong>La Madalena</strong><br>Plaza Landmark · Guadalajara</p>
+          <p>Restaurante <strong>La Madalena</strong></p>
+          <p>Plaza Landmark, Guadalajara</p>
         </div>
         <div class="info">
           <h3>🪑 Reservación</h3>
-          <p>Por favor confirmar su asistencia para reservar las mesas</p>
+          <p>Por favor confirma tu asistencia para reservar las mesas</p>
         </div>
       </div>
 
-      <div class="btns">
-        <a class="btn btn-primary" href="mailto:?subject=Confirmo asistencia a los XV de Carolina&body=Hola,%20confirmo%20mi%20asistencia%20el%2015%20de%20octubre%20a%20las%207:00%20pm%20en%20La%20Madalena.">Confirmar por correo</a>
-        <a class="btn btn-outline" href="https://wa.me/?text=Confirmo%20asistencia%20a%20la%20cena%20de%20los%20XV%20de%20Carolina%20(15%20octubre%207:00%20pm%20en%20La%20Madalena)" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
-      </div>
+      <a class="btn-confirmar" href="https://wa.me/?text=Confirmo%20asistencia%20a%20la%20cena%20de%20los%20XV%20de%20Carolina%20el%2015%20de%20octubre%20a%20las%207%3A00%20p.m.%20en%20La%20Madalena" target="_blank" rel="noopener">
+        Confirmar asistencia por WhatsApp
+      </a>
+    </section>
+
+    <!-- MAPA -->
+    <section class="mapa">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.005430192867!2d-103.396153!3d20.673942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428af22b5a79803%3A0x4ebf16bb6c84d671!2sLa%20Madalena%20Plaza%20Landmark!5e0!3m2!1ses-419!2smx!4v1696618920000"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </section>
 
     <div class="nota">
-      ¡Esperamos contar con su presencia para hacer de esta noche un recuerdo inolvidable! 💫
+      ¡Será un honor contar con tu presencia para celebrar juntos una noche inolvidable! ✨
     </div>
 
     <footer>
