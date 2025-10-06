@@ -3,205 +3,213 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>XV Años de Carolina | La Madalena</title>
+  <title>XV Años de Carolina | Cena en La Madalena</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Preload imágenes -->
   <link rel="preload" href="caroxv.jpg" as="image" fetchpriority="high">
-  <link rel="preload" href="logo-madalena.png" as="image" fetchpriority="high">
 
   <style>
     :root{
-      --vino:#5f1d2b;
-      --vino-osc:#3e131d;
-      --dorado:#caa94c;
-      --dorado-claro:#e9d9a7;
-      --crema:#fffaf4;
+      --vino:#5a1b2c;
+      --vino-osc:#3a111d;
+      --dorado:#d4b25f;
+      --dorado-claro:#f1e0b0;
       --blanco:#ffffff;
-      --gris-claro:#f9f9f9;
-      --gris:#dddddd;
-      --texto:#2a2a2a;
+      --crema:#fffaf4;
+      --gris-claro:#f8f8f8;
+      --gris:#e1e1e1;
+      --texto:#2d2d2d;
 
       --grad-vino:linear-gradient(135deg,var(--vino),var(--vino-osc));
       --grad-dorado:linear-gradient(135deg,var(--dorado),var(--dorado-claro));
-      --shadow:0 6px 25px rgba(0,0,0,.15);
+      --shadow:0 8px 28px rgba(0,0,0,.18);
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
+    *{margin:0;padding:0;box-sizing:border-box;}
     body{
       font-family:Inter, sans-serif;
       background:var(--gris-claro);
       color:var(--texto);
-      line-height:1.6;
       -webkit-font-smoothing:antialiased;
+      line-height:1.6;
     }
 
-    h1,h2,h3{
-      font-family:'Playfair Display', serif;
-      letter-spacing:.3px;
+    h1,h2,h3,h4{
+      font-family:'Cinzel', serif;
+      letter-spacing:0.5px;
     }
 
     .container{
       max-width:1100px;
-      margin:0 auto;
-      padding:18px;
+      margin:auto;
+      padding:16px;
     }
 
-    /* Encabezado */
+    /* ENCABEZADO */
     header{
       background:var(--grad-vino);
       color:#fff;
-      border-radius:20px;
-      padding:20px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      border-radius:24px;
+      padding:28px 20px;
+      text-align:center;
       box-shadow:var(--shadow);
-      margin-bottom:28px;
-      position:relative;
       overflow:hidden;
+      position:relative;
     }
     header::after{
-      content:'';
+      content:"";
       position:absolute;
       inset:0;
-      background:radial-gradient(circle at top right, rgba(255,255,255,0.12), transparent 70%);
+      background:radial-gradient(circle at top right, rgba(255,255,255,0.08), transparent 70%);
     }
-    .logo-box{
-      width:110px;height:110px;
-      background:var(--blanco);
-      border-radius:18px;
-      padding:10px;
-      display:flex;align-items:center;justify-content:center;
-      margin-right:20px;
-      box-shadow:0 4px 14px rgba(255,255,255,.25);
+    header h1{
+      font-size:clamp(1.8rem,5vw,2.8rem);
+      font-weight:600;
     }
-    .logo-box img{width:85%;height:auto;object-fit:contain}
-    .title-wrap h1{
-      font-size:clamp(1.5rem,3vw,2.3rem);
-      font-weight:700;
-      margin-bottom:4px;
-    }
-    .title-wrap p{
-      font-size:1rem;
-      opacity:.9;
-      font-weight:400;
+    header p{
+      font-size:clamp(0.95rem,2.5vw,1.1rem);
+      opacity:0.95;
+      margin-top:8px;
+      font-weight:300;
     }
 
-    /* Portada */
+    /* PORTADA */
     .hero{
       margin:28px 0;
-      border-radius:20px;
+      border-radius:24px;
       overflow:hidden;
       box-shadow:var(--shadow);
     }
     .hero img{
       width:100%;
-      height:440px;
-      object-fit:cover;
+      height:auto;
       display:block;
+      object-fit:cover;
+      max-height:500px;
     }
 
-    /* Tarjeta de invitación */
+    /* INVITACIÓN */
     .inv-card{
       background:var(--blanco);
-      border-radius:22px;
+      border-radius:26px;
+      padding:36px 24px;
       box-shadow:var(--shadow);
-      padding:36px 28px;
       text-align:center;
+      margin-bottom:36px;
     }
     .inv-card h2{
-      font-size:2.4rem;
+      font-size:clamp(1.8rem,4vw,2.5rem);
       color:var(--vino);
-      margin-bottom:14px;
+      margin-bottom:16px;
     }
-    .inv-card p.intro{
+    .inv-card p{
+      max-width:720px;
+      margin:auto;
       font-size:1.05rem;
-      max-width:750px;
-      margin:0 auto 22px;
-      line-height:1.7;
+      margin-bottom:18px;
+      line-height:1.8;
     }
 
-    /* Información */
+    /* INFO GRID */
     .info-grid{
       display:grid;
       gap:22px;
-      margin:28px 0 18px;
+      margin-top:26px;
     }
     @media(min-width:768px){
-      .info-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .info-grid{
+        grid-template-columns:repeat(3,1fr);
+      }
     }
     .info{
       background:var(--crema);
+      border-radius:18px;
+      padding:20px 16px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.08);
       border:1px solid rgba(0,0,0,0.05);
-      border-radius:16px;
-      padding:20px 18px;
-      box-shadow:0 2px 10px rgba(0,0,0,.06);
     }
     .info h3{
-      font-size:1.15rem;
       color:var(--vino);
-      margin-bottom:6px;
+      font-size:1.1rem;
+      margin-bottom:8px;
       font-weight:600;
     }
-    .info p{font-size:1rem}
+    .info p{
+      font-size:1rem;
+      line-height:1.5;
+    }
 
-    /* Botón de confirmación */
+    /* BOTÓN */
     .btn-confirmar{
       display:inline-block;
-      margin-top:22px;
-      padding:14px 26px;
+      margin-top:28px;
+      padding:14px 30px;
       font-size:1rem;
       font-weight:600;
       color:#fff;
       background:var(--vino);
       border-radius:14px;
       text-decoration:none;
-      transition:all .25s ease;
-      box-shadow:0 4px 14px rgba(0,0,0,.2);
+      transition:all .3s ease;
+      box-shadow:0 4px 18px rgba(0,0,0,0.25);
     }
     .btn-confirmar:hover{
       background:var(--vino-osc);
       transform:translateY(-2px);
     }
 
-    /* Mapa */
+    /* MAPA */
     .mapa{
-      margin-top:32px;
-      border-radius:20px;
+      margin-top:36px;
+      border-radius:24px;
       overflow:hidden;
       box-shadow:var(--shadow);
-      border:4px solid var(--blanco);
+      background:var(--blanco);
+      padding:14px;
+    }
+    .mapa h3{
+      text-align:center;
+      font-size:1.3rem;
+      color:var(--vino);
+      margin-bottom:12px;
+    }
+    .mapa p{
+      text-align:center;
+      font-size:1rem;
+      margin-bottom:12px;
+      font-weight:500;
     }
     .mapa iframe{
       width:100%;
       height:380px;
       border:0;
+      border-radius:18px;
     }
 
-    /* Nota final */
+    /* NOTA FINAL */
     .nota{
       background:var(--grad-dorado);
-      color:#3e2f14;
+      color:#3d2f14;
       text-align:center;
-      padding:26px 20px;
-      border-radius:20px;
-      margin:34px 0 20px;
+      padding:26px 18px;
+      border-radius:24px;
+      margin:36px 0;
+      font-size:1.1rem;
       font-weight:600;
       box-shadow:var(--shadow);
-      font-size:1.1rem;
     }
 
     footer{
       text-align:center;
       font-size:.85rem;
-      color:#666;
-      margin-top:16px;
+      color:#555;
       padding:14px 0;
+      margin-top:14px;
     }
   </style>
 </head>
@@ -210,42 +218,34 @@
 
     <!-- ENCABEZADO -->
     <header>
-      <div class="logo-box">
-        <img src="logo-madalena.png" alt="Logo La Madalena">
-      </div>
-      <div class="title-wrap">
-        <h1>XV Años de Carolina</h1>
-        <p>Cena de celebración en La Madalena · Plaza Landmark</p>
-      </div>
+      <h1>XV Años de Carolina</h1>
+      <p>Cena de celebración en La Madalena · Plaza Landmark</p>
     </header>
 
     <!-- PORTADA -->
     <section class="hero">
-      <img src="caroxv.jpg" alt="Foto de Carolina">
+      <img src="caroxv.jpg" alt="Foto de Carolina en su XV">
     </section>
 
     <!-- INVITACIÓN -->
     <section class="inv-card">
-      <h2>Estás cordialmente invitado</h2>
-      <p class="intro">
-        Nos llena de alegría invitarte a la <strong>cena para celebrar los XV años de Carolina</strong>.
-        Acompáñanos para compartir juntos esta fecha tan especial y memorable.
-      </p>
+      <h2>¡Estás invitado a una noche especial!</h2>
+      <p>Con mucho cariño los invitamos a la <strong>cena para celebrar los XV años de Carolina</strong>.
+         Acompáñanos a compartir una velada llena de alegría y momentos inolvidables.</p>
 
       <div class="info-grid">
         <div class="info">
           <h3>📅 Fecha</h3>
-          <p>Miércoles <strong>15 de octubre</strong></p>
-          <p>Hora: <strong>7:00 p.m.</strong></p>
+          <p>Miércoles <strong>15 de octubre</strong><br>Hora: <strong>7:00 p.m.</strong></p>
         </div>
         <div class="info">
           <h3>📍 Lugar</h3>
-          <p>Restaurante <strong>La Madalena</strong></p>
-          <p>Plaza Landmark, Guadalajara</p>
+          <p>Restaurante <strong>La Madalena</strong><br>
+             Plaza Landmark, Guadalajara</p>
         </div>
         <div class="info">
           <h3>🪑 Reservación</h3>
-          <p>Por favor confirma tu asistencia para reservar las mesas</p>
+          <p>Por favor confirma tu asistencia para apartar las mesas</p>
         </div>
       </div>
 
@@ -256,18 +256,20 @@
 
     <!-- MAPA -->
     <section class="mapa">
+      <h3>Cómo llegar a La Madalena</h3>
+      <p>📍 Av. Patria 2085, Puerta de Hierro, 45116 Zapopan, Jalisco, México</p>
       <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.005430192867!2d-103.396153!3d20.673942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428af22b5a79803%3A0x4ebf16bb6c84d671!2sLa%20Madalena%20Plaza%20Landmark!5e0!3m2!1ses-419!2smx!4v1696618920000"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.1875985564456!2d-103.40939232513635!3d20.6752470016247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428af08db295d01%3A0xd39764c03e9a4fd6!2sLa%20Madalena%20Landmark!5e0!3m2!1ses-419!2smx!4v1696618920000"
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </section>
 
     <div class="nota">
-      ¡Será un honor contar con tu presencia para celebrar juntos una noche inolvidable! ✨
+      ¡Será un honor contar con tu presencia para celebrar juntos este momento tan especial! ✨
     </div>
 
     <footer>
-      © 2025 Celebración XV Años de Carolina · La Madalena – Plaza Landmark
+      © 2025 Celebración XV Años de Carolina · Cena en La Madalena – Plaza Landmark
     </footer>
 
   </div>
