@@ -10,9 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Preload imágenes -->
-  <link rel="preload" href="caroxv.jpg" as="image" fetchpriority="high">
-
   <style>
     :root{
       --vino:#5a1b2c;
@@ -22,7 +19,6 @@
       --blanco:#ffffff;
       --crema:#fffaf4;
       --gris-claro:#f8f8f8;
-      --gris:#e1e1e1;
       --texto:#2d2d2d;
 
       --grad-vino:linear-gradient(135deg,var(--vino),var(--vino-osc));
@@ -35,8 +31,8 @@
       font-family:Inter, sans-serif;
       background:var(--gris-claro);
       color:var(--texto);
-      -webkit-font-smoothing:antialiased;
       line-height:1.6;
+      -webkit-font-smoothing:antialiased;
     }
 
     h1,h2,h3,h4{
@@ -144,7 +140,7 @@
       line-height:1.5;
     }
 
-    /* BOTÓN */
+    /* BOTÓN WHATSAPP */
     .btn-confirmar{
       display:inline-block;
       margin-top:28px;
@@ -163,7 +159,7 @@
       transform:translateY(-2px);
     }
 
-    /* MAPA */
+    /* MAPA COMO BOTÓN */
     .mapa{
       margin-top:36px;
       border-radius:24px;
@@ -171,24 +167,33 @@
       box-shadow:var(--shadow);
       background:var(--blanco);
       padding:14px;
+      text-align:center;
     }
     .mapa h3{
-      text-align:center;
       font-size:1.3rem;
       color:var(--vino);
-      margin-bottom:12px;
+      margin-bottom:10px;
     }
     .mapa p{
-      text-align:center;
       font-size:1rem;
-      margin-bottom:12px;
       font-weight:500;
+      margin-bottom:14px;
+      color:#333;
     }
-    .mapa iframe{
+    .mapa a.mapa-link{
+      display:block;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 4px 16px rgba(0,0,0,0.2);
+      transition:transform .3s ease;
+    }
+    .mapa a.mapa-link:hover{
+      transform:scale(1.01);
+    }
+    .mapa img{
       width:100%;
-      height:380px;
-      border:0;
-      border-radius:18px;
+      display:block;
+      height:auto;
     }
 
     /* NOTA FINAL */
@@ -254,14 +259,15 @@
       </a>
     </section>
 
-    <!-- MAPA -->
+    <!-- MAPA COMO BOTÓN -->
     <section class="mapa">
       <h3>Cómo llegar a La Madalena</h3>
       <p>📍 Av. Patria 2085, Puerta de Hierro, 45116 Zapopan, Jalisco, México</p>
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.1875985564456!2d-103.40939232513635!3d20.6752470016247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428af08db295d01%3A0xd39764c03e9a4fd6!2sLa%20Madalena%20Landmark!5e0!3m2!1ses-419!2smx!4v1696618920000"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+
+      <a class="mapa-link" href="https://goo.gl/maps/fZC2xKtf5XG2" target="_blank" rel="noopener">
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=Av.+Patria+2085+Zapopan+Jalisco+Mexico&zoom=16&size=800x400&scale=2&markers=color:red%7CAv.+Patria+2085+Zapopan+Jalisco+Mexico&key=YOUR_GOOGLE_MAPS_API_KEY" alt="Mapa: clic para abrir en Google Maps">
+      </a>
+      <p><em>Toca el mapa para abrir la ubicación directamente en Google Maps</em></p>
     </section>
 
     <div class="nota">
